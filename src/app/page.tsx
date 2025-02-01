@@ -159,7 +159,7 @@ export default function Home() {
               </table>
             </div>
             <p className="text-sm text-gray-600 text-center mt-3">
-              *Negative difference means you save tax in FY 2025-26!*
+              *difference means you save tax in FY 2025-26!*
             </p>
           </div>
         )}
