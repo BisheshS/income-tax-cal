@@ -152,7 +152,7 @@ export default function Home() {
                         thousandSeparator=","
                         thousandsGroupStyle="lakh"
                       />{" "}
-                      {difference > 0 ? "(More Tax in 2024)" : "(Less Tax in 2025)"}
+                      {difference > 0 ? "(Less Tax in 2025)" : "(Less Tax in 2024)"}
                     </td>
                   </tr>
                 </tbody>
