@@ -30,7 +30,8 @@ export default function Home() {
       taxAmount = 140000 + (taxableIncome - 1500000) * 0.30;
     }
 
-    return taxAmount;
+    return Math.round(taxAmount);
+;
   };
 
   // ✅ Corrected Tax Calculation for FY 2025-26
@@ -50,7 +51,7 @@ export default function Home() {
       taxAmount = 240000 + (taxableIncome - 2400000) * 0.30;
     }
 
-    return taxAmount;
+    return Math.round(taxAmount);
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
