@@ -11,7 +11,7 @@ export default function Home() {
 
   const standardDeduction = 75000;
 
-  // ✅ Tax Calculation for New Regime FY 2024-25
+  // ✅ Corrected Tax Calculation for FY 2024-25
   const calculateTax2024 = (grossIncome: number) => {
     const taxableIncome = grossIncome - standardDeduction;
     let taxAmount = 0;
@@ -33,25 +33,21 @@ export default function Home() {
     return taxAmount;
   };
 
-  // ✅ Tax Calculation for New Regime FY 2025-26
+  // ✅ Corrected Tax Calculation for FY 2025-26
   const calculateTax2025 = (grossIncome: number) => {
     const taxableIncome = grossIncome - standardDeduction;
     let taxAmount = 0;
 
-    if (taxableIncome <= 400000) {
-      taxAmount = 0;
-    } else if (taxableIncome <= 800000) {
-      taxAmount = (taxableIncome - 400000) * 0.05;
-    } else if (taxableIncome <= 1200000) {
-      taxAmount = 20000 + (taxableIncome - 800000) * 0.10;
+    if (taxableIncome <= 1200000) {
+      taxAmount = 0; // Tax-Free up to ₹12,00,000
     } else if (taxableIncome <= 1600000) {
-      taxAmount = 60000 + (taxableIncome - 1200000) * 0.15;
+      taxAmount = (taxableIncome - 1200000) * 0.15;
     } else if (taxableIncome <= 2000000) {
-      taxAmount = 120000 + (taxableIncome - 1600000) * 0.20;
+      taxAmount = 60000 + (taxableIncome - 1600000) * 0.20;
     } else if (taxableIncome <= 2400000) {
-      taxAmount = 200000 + (taxableIncome - 2000000) * 0.25;
+      taxAmount = 140000 + (taxableIncome - 2000000) * 0.25;
     } else {
-      taxAmount = 300000 + (taxableIncome - 2400000) * 0.30;
+      taxAmount = 240000 + (taxableIncome - 2400000) * 0.30;
     }
 
     return taxAmount;
@@ -152,14 +148,14 @@ export default function Home() {
                         thousandSeparator=","
                         thousandsGroupStyle="lakh"
                       />{" "}
-                      {difference > 0 ? "(Less Tax in 2025)" : "(Less Tax in 2024)"}
+                      {difference > 0 ? "(More Tax in 2024)" : "(Less Tax in 2025)"}
                     </td>
                   </tr>
                 </tbody>
               </table>
             </div>
             <p className="text-sm text-gray-600 text-center mt-3">
-              *difference means you save tax in FY 2025-26!*
+              *Negative difference means you save tax in FY 2025-26!*
             </p>
           </div>
         )}
